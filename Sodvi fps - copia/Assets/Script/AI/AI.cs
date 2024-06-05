@@ -15,6 +15,7 @@ public class AI : MonoBehaviour
     [Header("---------FollowPLayer--------")]
     public bool folLowPlayer;
     private GameObject player;
+    
     private float distanceToPlayer;
     public float distanceToFollow = 10;
     public float distanceToPath = 2;
@@ -57,4 +58,6 @@ public class AI : MonoBehaviour
     {
         navMeshAgent.destination = player.transform.position;
     }
+
+    
 }
