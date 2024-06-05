@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.UIElements;
 
-public class AI : MonoBehaviour
+public class Ai : MonoBehaviour
 {
     public NavMeshAgent navMeshAgent;
     public Transform[] destinations;
+
    
-    
-    
+    public int Daño = 20;
     private int puntos = 0;
     [Header("---------FollowPLayer--------")]
     public bool folLowPlayer;
     private GameObject player;
-    
+
     private float distanceToPlayer;
     public float distanceToFollow = 10;
     public float distanceToPath = 2;
@@ -26,13 +26,13 @@ public class AI : MonoBehaviour
         player = FindObjectOfType<PlayerMovement>().gameObject;
     }
 
-    
+
     void Update()
     {
-       distanceToPlayer = Vector3.Distance(transform.position, player.transform.position);
+        distanceToPlayer= Vector3.Distance(transform.position, player.transform.position);
         if (distanceToPlayer <= distanceToFollow && folLowPlayer)
         {
-            FollowPlayer(); 
+            FollowPlayer();
         }
         else
         {
@@ -42,13 +42,15 @@ public class AI : MonoBehaviour
 
     public void EnemyPath()//rutinas de destinos
     {
-    navMeshAgent.destination = destinations[puntos].position;
-        if (Vector3.Distance(transform.position, destinations[puntos].position) <= distanceToPath) 
+        navMeshAgent.destination = destinations[puntos].position;
+        if (Vector3.Distance(transform.position, destinations[puntos].position) <= distanceToPath)
         {
-            if (destinations[puntos] != destinations[destinations.Length-1]) { 
+            if (destinations[puntos] != destinations[destinations.Length - 1])
+            {
                 puntos++;
             }
-            else {
+            else
+            {
                 puntos = 0;
             }
         }
@@ -57,7 +59,8 @@ public class AI : MonoBehaviour
     public void FollowPlayer()//seguir al jugador
     {
         navMeshAgent.destination = player.transform.position;
-    }
-
-    
+    }   
 }
+
+
+

@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
        Instance = this;
     }
 
-    private void Update()
+    private void Update() // UI
     {
         ammoText.text = gunAmmo.ToString();
         healthText.text = health.ToString();

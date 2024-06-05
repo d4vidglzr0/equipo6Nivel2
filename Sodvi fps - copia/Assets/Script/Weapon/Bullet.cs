@@ -10,7 +10,7 @@ public class Bullet : MonoBehaviour
         {
             if (collsion.gameObject.CompareTag("Enemy"))
                 {
-                   collsion.gameObject.GetComponent<AI>().LooseLife(Damage);
+                   collsion.gameObject.GetComponent<LooseLife>().Loose(Damage);
                 }
         
             }
