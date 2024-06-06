@@ -8,6 +8,7 @@ TagManager:
   - Pills
   - DeathFloor
   - EnemyBullet
+  - Win
   layers:
   - Default
   - TransparentFX

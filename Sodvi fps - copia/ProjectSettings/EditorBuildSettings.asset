@@ -11,4 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Main/JuegoFInal/Nivel.unity
     guid: fc5d731d691ab9642a72e34b76ff870d
+  - enabled: 1
+    path: Assets/Scenes/Main/JuegoFInal/WinScenne.unity
+    guid: 903349d247f2b7b4bb43caf77103458c
   m_configObjects: {}

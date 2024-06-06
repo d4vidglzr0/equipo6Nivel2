@@ -28,12 +28,24 @@ public class Menu : MonoBehaviour
         {
             Time.timeScale = 0;
             pausePanel.SetActive(true);
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
         else
         {
             Time.timeScale = 1;
             pausePanel.SetActive(false);
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
+
 
         }
+
     }
-}
+    public void Salir()
+    {
+        Application.Quit(); 
+    }
+
+    }
+

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInteractions : MonoBehaviour
 {
@@ -23,9 +24,15 @@ public class PlayerInteractions : MonoBehaviour
             GetComponent<CharacterController>().enabled = true;
 
         }
-       
+        if(other.gameObject.CompareTag("Win"))//Gannar
+
+        {
+            SceneManager.LoadScene("WinScenne");
+
+        }
+
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnCollisionEnter(Collision collision) //disparos enemigos
     {
         if (collision.gameObject.CompareTag("EnemyBullet"))
         {
